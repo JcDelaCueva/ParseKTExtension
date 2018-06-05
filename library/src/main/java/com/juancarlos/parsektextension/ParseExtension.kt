@@ -7,7 +7,7 @@ import com.parse.ParseUser
 import java.util.*
 import kotlin.reflect.KProperty
 
-open class BaseUser : ParseUser() {
+public open class BaseUser : ParseUser() {
 
     override fun <T> getList(key: String): List<T>? {
         val list = super.getList<T>(key)
@@ -69,7 +69,7 @@ open class BaseUser : ParseUser() {
     }
 }
 
-open class BaseParseObject : ParseObject() {
+public open class BaseParseObject : ParseObject() {
 
     override fun <T> getList(key: String): List<T>? {
         val list = super.getList<T>(key)
@@ -131,7 +131,7 @@ open class BaseParseObject : ParseObject() {
     }
 }
 
-class PointerObjectDelegate<out T>(private val key: String) {
+public class PointerObjectDelegate<out T>(private val key: String) {
 
     @Suppress("UNCHECKED_CAST")
     operator fun getValue(parseObj: ParseObject, meta: KProperty<*>): T? {
@@ -146,7 +146,7 @@ class PointerObjectDelegate<out T>(private val key: String) {
     }
 }
 
-class ObjectBasicDelegate<out T>(private val key: String,
+public class ObjectBasicDelegate<out T>(private val key: String,
                                  private val type: Class<T>) {
 
     @Suppress("UNCHECKED_CAST")
@@ -170,7 +170,7 @@ class ObjectBasicDelegate<out T>(private val key: String,
     }
 }
 
-class ObjectFileUrlDelegate(private val key: String) {
+public class ObjectFileUrlDelegate(private val key: String) {
 
     @Suppress("UNCHECKED_CAST")
     operator fun getValue(bParseObject: BaseParseObject,
@@ -186,7 +186,7 @@ class ObjectFileUrlDelegate(private val key: String) {
     }
 }
 
-class UserBasicDelegate<out T>(private val key: String,
+public class UserBasicDelegate<out T>(private val key: String,
                                private val type: Class<T>) {
 
     @Suppress("UNCHECKED_CAST")
@@ -209,7 +209,7 @@ class UserBasicDelegate<out T>(private val key: String,
     }
 }
 
-class UserObjectFileUrlDelegate(private val key: String) {
+public class UserObjectFileUrlDelegate(private val key: String) {
 
     @Suppress("UNCHECKED_CAST")
     operator fun getValue(bParseObject: BaseUser, meta: KProperty<*>): String {
@@ -224,7 +224,7 @@ class UserObjectFileUrlDelegate(private val key: String) {
     }
 }
 
-fun ParseException.isSessionError(): Boolean {
+public fun ParseException.isSessionError(): Boolean {
     return code == ParseException.SESSION_MISSING
             || code == ParseException.INVALID_SESSION_TOKEN
             || code == ParseException.INVALID_LINKED_SESSION
