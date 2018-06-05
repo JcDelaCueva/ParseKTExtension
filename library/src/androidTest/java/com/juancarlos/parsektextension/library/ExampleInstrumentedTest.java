@@ -1,4 +1,4 @@
-package com.juancarlos.parsektextension;
+package com.juancarlos.parsektextension.library;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

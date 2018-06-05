@@ -1,4 +1,4 @@
-package com.juancarlos.parsektextension
+package com.juancarlos.parsektextension.library
 
 import android.text.TextUtils
 import com.parse.ParseException
@@ -224,7 +224,7 @@ public class UserObjectFileUrlDelegate(private val key: String) {
     }
 }
 
-public fun ParseException.isSessionError(): Boolean {
+inline fun ParseException.isSessionError(): Boolean {
     return code == ParseException.SESSION_MISSING
             || code == ParseException.INVALID_SESSION_TOKEN
             || code == ParseException.INVALID_LINKED_SESSION

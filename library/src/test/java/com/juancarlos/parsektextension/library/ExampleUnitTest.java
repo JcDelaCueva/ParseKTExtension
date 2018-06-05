@@ -1,4 +1,4 @@
-package com.juancarlos.parsektextension;
+package com.juancarlos.parsektextension.library;
 
 import org.junit.Test;
 
